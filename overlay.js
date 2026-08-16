@@ -18,6 +18,16 @@ const state = {
 
 const $ = (id) => document.getElementById(id);
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function initOverlay() {
   // 1. Ensure database reference is bound
   if (window.GUILD_RUN_DATABASE) {
@@ -226,7 +236,7 @@ function renderRelics(relicsMap) {
     ];
 
     let dbEntry = null;
-    if (state.database.relics) {
+    if (state.database && state.database.relics) {
       for (const key of candidates) {
         if (state.database.relics[key]) {
           dbEntry = state.database.relics[key];
@@ -234,17 +244,16 @@ function renderRelics(relicsMap) {
         }
       }
     }
-    dbEntry = dbEntry || {};
 
-    const name = dbEntry.name || formatRelicName(numId);
-    const description = dbEntry.description || 'Active Guild Run Relic';
-    const rarity = (dbEntry.rarity || 'common').toLowerCase();
+    const name = dbEntry?.name || 'Unknown Relic';
+    const description = dbEntry?.description || `${numId} is not in the database`;
+    const rarity = (dbEntry?.rarity || 'common').toLowerCase();
     return `
       <div class="relic-card rarity-${rarity}" title="${escapeHtml(name)} — ${escapeHtml(description)}">
         <div class="relic-info">
           <div class="relic-header-line">
             <span class="relic-name">${escapeHtml(name)}</span>
-            ${dbEntry.rarity ? `<span class="relic-rarity-badge rarity-${rarity}">${escapeHtml(dbEntry.rarity)}</span>` : ''}
+            ${dbEntry?.rarity ? `<span class="relic-rarity-badge rarity-${rarity}">${escapeHtml(dbEntry.rarity)}</span>` : ''}
           </div>
           <div class="relic-desc">${escapeHtml(description)}</div>
         </div>
