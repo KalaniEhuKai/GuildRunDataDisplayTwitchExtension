@@ -31,9 +31,9 @@ function initOverlay() {
     });
   }
 
-  // Fallback for standalone browser testing: check ?channelId=... in URL query string
+  // Fallback for standalone browser testing: check ?channelId=... in URL query string (case-insensitive)
   const params = new URLSearchParams(window.location.search);
-  const queryChannelId = params.get('channelId') || params.get('cid');
+  const queryChannelId = params.get('channelId') || params.get('channelID') || params.get('channelid') || params.get('cid') || params.get('channel');
   if (queryChannelId && !state.channelId) {
     state.channelId = queryChannelId;
   }
