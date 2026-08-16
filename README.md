@@ -1,13 +1,13 @@
 # GuildRunDataDisplayTwitchExtension
 
-An interactive, non-intrusive **Video Overlay extension** for Twitch streams that displays live Guild Run game data (Act, Floor, Relics, Party Heroes, HP, Gold/Shards) streamed from the **Twitch Local Game Data Bridge**.
+An interactive **Video Overlay extension** for Twitch streams that displays live Guild Run game data (Act, Floor, Relics, etc.). Uses the **Twitch Local Game Data Bridge** to get access to the data..
 
 ---
 
 ## Features & Hover-Zone UX
 
-- **Top-Left Hover Zone (`Relics`)**: Moving your mouse into the top-left region fetches game data and opens an active Relics popover showing acquired relics, icons, names, and descriptions.
-- **Middle-Right Hover Zone (`Current Challenge`)**: Moving your mouse into the middle-right region fetches game data and displays current challenge stats (Act, Floor, Shards, Run Seed) and Party Heroes HP bars.
+- **Top-Left Hover Zone (`Relics`)**: Moving your mouse into the top-left region fetches game data and opens an active Relics popover showing acquired relics.
+- **Middle-Right Hover Zone (`Current Challenge`)**: Moving your mouse into the middle-right region fetches game data and displays current challenge stats (Act, Floor, Deaths).
 - **Unobstructed Video Stream**: Interactive zone boxes are 100% transparent with thin colored borders. Zero stream content visual obstruction when idle.
 - **Event-Driven Data Fetching**: Data is fetched from the data bridge *only* when the viewer hovers into an interactive zone (`mouseenter`).
 - **Single Database Source (`guildrundatabase.js`)**: Single source of truth database file loaded synchronously via `<script src="guildrundatabase.js"></script>`, eliminating async fetch race conditions and local file CORS restrictions.
