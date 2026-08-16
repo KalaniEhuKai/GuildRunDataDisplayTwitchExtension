@@ -4,12 +4,13 @@ An interactive, non-intrusive **Video Overlay extension** for Twitch streams tha
 
 ---
 
-## Features
+## Features & Hover-Zone UX
 
-- **Video Overlay HUD**: Sleek floating compact pill badge (`Act 2 · Floor 4 · 💎 120 Shards`) in the top-right corner of the video stream.
-- **Expandable Live Drawer**: Streamers and viewers click to expand/collapse full hero health bars, levels, active relics list, and run seed.
-- **Auto Channel Authorization**: Uses the official Twitch Extension SDK (`window.Twitch.ext.onAuthorized`) to automatically determine the broadcaster channel ID.
-- **Zero-Config Setup**: Automatically queries `https://twitch-local-game-data-bridge.kalani-ehu-kai.workers.dev/data/:channelId/guild-run/data`.
+- **Top-Left Hover Zone (`Relics`)**: Moving your mouse into the top-left region fetches game data and opens an active Relics popover showing acquired relics, icons, names, and descriptions.
+- **Middle-Right Hover Zone (`Current Challenge`)**: Moving your mouse into the middle-right region fetches game data and displays current challenge stats (Act, Floor, Shards, Run Seed) and Party Heroes HP bars.
+- **Unobstructed Video Stream**: Interactive zone boxes are 100% transparent with thin colored borders. Zero stream content visual obstruction when idle.
+- **Event-Driven Data Fetching**: Data is fetched from the data bridge *only* when the viewer hovers into an interactive zone (`mouseenter`).
+- **Single Database Source (`guildrundatabase.js`)**: Single source of truth database file loaded synchronously via `<script src="guildrundatabase.js"></script>`, eliminating async fetch race conditions and local file CORS restrictions.
 
 ---
 
@@ -18,12 +19,24 @@ An interactive, non-intrusive **Video Overlay extension** for Twitch streams tha
 ```text
 GuildRunDataDisplayTwitchExtension/
 ├── overlay.html          Video Overlay UI (loaded directly on video stream)
-├── overlay.js            Overlay controller & live polling logic
-├── style.css             Twitch-native glassmorphism UI styles
+├── overlay.js            Overlay controller & event-driven fetch logic
+├── style.css             Twitch-native glassmorphism hover-zone UI styles
+├── guildrundatabase.js   Single database source of truth for relics, heroes, and metadata
 ├── config.html           Streamer configuration testing view
 ├── config.js             Config test controller
 ├── manifest.json         Official Twitch Extension Manifest
+├── LICENSE               GNU General Public License v3.0
 └── README.md             Developer Documentation
+```
+
+---
+
+## Database Management & Scraper Tool
+
+To re-scrape [https://guildrun.org/database/relics/](https://guildrun.org/database/relics/) and update `guildrundatabase.js`, run:
+
+```bash
+node tools/scrape-relics.js
 ```
 
 ---
@@ -33,8 +46,11 @@ GuildRunDataDisplayTwitchExtension/
 You can preview and test `overlay.html` in your browser outside Twitch by passing a `channelId` query parameter in the URL:
 
 ```text
-file:///path/to/GuildRunDataDisplayTwitchExtension/overlay.html?channelId=76561198040573729
+file:///path/to/GuildRunDataDisplayTwitchExtension/overlay.html?channelId=48715826
 ```
+
+1. Hover over the **Top-Left Zone**: Triggers API fetch and displays Relics popover.
+2. Hover over the **Middle-Right Zone**: Triggers API fetch and displays Challenge & Party popover.
 
 ---
 
@@ -42,6 +58,6 @@ file:///path/to/GuildRunDataDisplayTwitchExtension/overlay.html?channelId=765611
 
 1. Log into [dev.twitch.tv/console/extensions](https://dev.twitch.tv/console/extensions).
 2. Click **Create Extension** → **Extension Type: Video Overlay**.
-3. Zip all files in `GuildRunDataDisplayTwitchExtension/` (`overlay.html`, `overlay.js`, `style.css`, `config.html`, `config.js`, `manifest.json`).
+3. Zip all files in `GuildRunDataDisplayTwitchExtension/` (`overlay.html`, `overlay.js`, `style.css`, `guildrundatabase.js`, `config.html`, `config.js`, `manifest.json`).
 4. Upload the zip file under the **Files** section in Twitch Developer Console.
 5. Set your Extension state to **In Testing** or submit for review.

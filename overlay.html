@@ -10,82 +10,75 @@
 </head>
 <body>
 
-  <!-- Floating Compact Pill Badge (Default unobtrusive widget on video overlay) -->
-  <div class="overlay-widget">
-    <div id="pill-btn" class="pill-badge" title="Click to view live run details">
-      <div id="pill-status-dot" class="pill-dot offline"></div>
-      <span id="pill-title-text" class="pill-text">Guild Run</span>
-      <span id="pill-sub-text" class="pill-sub">Offline</span>
+  <div id="overlay-container" class="overlay-container">
+
+    <!-- TOP-LEFT HOVER ZONE (Relics Information) -->
+    <div id="zone-top-left" class="hover-zone zone-top-left">
+      <div class="zone-box" id="box-top-left" title="Hover for Relics Info"></div>
+
+      <!-- Top-Left Popover Panel -->
+      <div id="panel-top-left" class="hover-popover popover-top-left hidden">
+        <div class="popover-header">
+          <span class="popover-title">🔮 Active Relics</span>
+          <span id="relics-header-count" class="popover-subtitle">0 Relics</span>
+        </div>
+        <div class="popover-content">
+          <div id="relics-list" class="relics-grid">
+            <!-- Relic cards populated dynamically -->
+          </div>
+          <div id="relics-empty-view" class="empty-state" hidden>
+            <div class="empty-icon">🔮</div>
+            <div class="empty-title">No Relics Acquired</div>
+            <div class="empty-desc">The streamer has not collected any relics in this run yet.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Full Expanded Overlay Drawer/Panel -->
-    <div id="overlay-drawer" class="overlay-panel hidden">
-      <div class="panel-header">
-        <div class="panel-title">
-          <span>🛡️ Live Guild Run</span>
+    <!-- MIDDLE-RIGHT HOVER ZONE (Current Challenge Data) -->
+    <div id="zone-middle-right" class="hover-zone zone-middle-right">
+      <div class="zone-box" id="box-middle-right" title="Hover for Challenge Info"></div>
+
+      <!-- Middle-Right Popover Panel -->
+      <div id="panel-middle-right" class="hover-popover popover-middle-right hidden">
+        <div class="popover-header">
+          <span class="popover-title">⚔️ Current Challenge</span>
         </div>
-        <button id="close-drawer-btn" class="close-btn" title="Close overlay">&times;</button>
-      </div>
-
-      <div class="panel-content">
-
-        <!-- Active Run State (populated dynamically) -->
-        <div id="active-run-view">
+        <div class="popover-content">
           
-          <!-- Run Stats Grid -->
-          <div class="run-stats-grid">
-            <div class="stat-box">
-              <div class="stat-box-label">Act</div>
-              <div class="stat-box-value" id="val-act">—</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-box-label">Floor</div>
-              <div class="stat-box-value" id="val-floor">—</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-box-label">Shards</div>
-              <div class="stat-box-value" id="val-gold">—</div>
-            </div>
-          </div>
-
-          <!-- Relics Showcase -->
-          <div style="margin-top: 14px;">
-            <div class="section-title">
-              <span>🔮 Active Relics (<span id="relics-count">0</span>)</span>
-            </div>
-            <div id="relics-list" class="relics-grid" style="margin-top: 8px;">
-              <!-- Relic items auto-populated -->
+          <!-- Active Run View -->
+          <div id="active-challenge-view">
+            <!-- Stats Grid -->
+            <div class="run-stats-grid">
+              <div class="stat-box">
+                <div class="stat-box-label">Act</div>
+                <div class="stat-box-value" id="val-act">—</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-box-label">Floor</div>
+                <div class="stat-box-value" id="val-floor">—</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-box-label">Hero Deaths</div>
+                <div class="stat-box-value" id="val-deaths">0</div>
+              </div>
             </div>
           </div>
 
-          <!-- Party & Heroes Breakdown -->
-          <div style="margin-top: 14px;">
-            <div class="section-title">
-              <span>⚔️ Party Heroes (<span id="party-count">0</span>)</span>
-            </div>
-            <div id="party-list" class="party-list" style="margin-top: 8px;">
-              <!-- Hero cards auto-populated -->
-            </div>
-          </div>
-
-          <!-- Seed / Info Subtext -->
-          <div style="font-size: 0.7rem; color: var(--text-dim); text-align: center; margin-top: 12px;">
-            Seed: <span id="val-seed" style="font-family: monospace; color: #fff;">—</span>
+          <!-- Empty / Offline State -->
+          <div id="no-challenge-view" class="empty-state" hidden>
+            <div class="empty-icon">🛡️</div>
+            <div class="empty-title">No Active Challenge</div>
+            <div class="empty-desc">The streamer is not currently in an active Guild Run challenge session.</div>
           </div>
 
         </div>
-
-        <!-- No Active Run State (Shown when status is "no_file_found") -->
-        <div id="no-run-view" class="no-run-card" hidden>
-          <div class="no-run-icon">🛡️</div>
-          <div class="no-run-title">No Active Run</div>
-          <div class="no-run-desc">The streamer is not currently in an active Guild Run session.</div>
-        </div>
-
       </div>
     </div>
+
   </div>
 
+  <script src="guildrundatabase.js"></script>
   <script src="overlay.js"></script>
 </body>
 </html>

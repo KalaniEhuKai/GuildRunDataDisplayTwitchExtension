@@ -1,28 +1,33 @@
 /**
  * =============================================================================
  * Twitch Extension — Video Overlay Controller (overlay.js)
+ * Hover-Zone Event-Driven UI & Guild Run Database Integration
  * =============================================================================
  */
 
 const WORKER_URL = 'https://twitch-local-game-data-bridge.kalani-ehu-kai.workers.dev';
-const POLL_INTERVAL_MS = 3000;
 
 // State management
 const state = {
   channelId: null,
-  pollTimer: null,
-  isDrawerOpen: false,
+  database: window.GUILD_RUN_DATABASE || { relics: {}, heroes: {} },
   lastPayloadStr: null,
+  activeHoverZone: null,
+  isFetching: false,
 };
 
 const $ = (id) => document.getElementById(id);
 
 function initOverlay() {
-  // Listen for Twitch Extension authorization helper
+  // 1. Ensure database reference is bound
+  if (window.GUILD_RUN_DATABASE) {
+    state.database = window.GUILD_RUN_DATABASE;
+  }
+
+  // 2. Listen for Twitch Extension authorization helper
   if (window.Twitch && window.Twitch.ext) {
     window.Twitch.ext.onAuthorized((auth) => {
       state.channelId = auth.channelId;
-      startPolling();
     });
   }
 
@@ -31,36 +36,57 @@ function initOverlay() {
   const queryChannelId = params.get('channelId') || params.get('cid');
   if (queryChannelId && !state.channelId) {
     state.channelId = queryChannelId;
-    startPolling();
   }
 
-  // Toggle drawer click handlers
-  $('pill-btn')?.addEventListener('click', toggleDrawer);
-  $('close-drawer-btn')?.addEventListener('click', closeDrawer);
+  // 3. Attach hover zone event listeners for event-driven fetching
+  setupHoverZones();
 }
 
-function toggleDrawer() {
-  state.isDrawerOpen = !state.isDrawerOpen;
-  const drawer = $('overlay-drawer');
-  if (drawer) {
-    if (state.isDrawerOpen) drawer.classList.remove('hidden');
-    else drawer.classList.add('hidden');
+function setupHoverZones() {
+  const zoneTopLeft = $('zone-top-left');
+  const zoneMiddleRight = $('zone-middle-right');
+
+  if (zoneTopLeft) {
+    zoneTopLeft.addEventListener('mouseenter', () => onZoneMouseEnter('top-left'));
+    zoneTopLeft.addEventListener('mouseleave', () => onZoneMouseLeave('top-left'));
+  }
+
+  if (zoneMiddleRight) {
+    zoneMiddleRight.addEventListener('mouseenter', () => onZoneMouseEnter('middle-right'));
+    zoneMiddleRight.addEventListener('mouseleave', () => onZoneMouseLeave('middle-right'));
   }
 }
 
-function closeDrawer() {
-  state.isDrawerOpen = false;
-  $('overlay-drawer')?.classList.add('hidden');
+async function onZoneMouseEnter(zoneId) {
+  state.activeHoverZone = zoneId;
+
+  // Show corresponding popover panel
+  const panelId = zoneId === 'top-left' ? 'panel-top-left' : 'panel-middle-right';
+  const panel = $(panelId);
+  if (panel) {
+    panel.classList.remove('hidden');
+  }
+
+  // EVENT-DRIVEN FETCH: Fetch fresh data from data bridge on mouseenter
+  await fetchLiveGameData();
 }
 
-function startPolling() {
-  if (state.pollTimer) clearInterval(state.pollTimer);
-  fetchLiveGameData();
-  state.pollTimer = setInterval(fetchLiveGameData, POLL_INTERVAL_MS);
+function onZoneMouseLeave(zoneId) {
+  if (state.activeHoverZone === zoneId) {
+    state.activeHoverZone = null;
+  }
+
+  // Hide popover panel smoothly
+  const panelId = zoneId === 'top-left' ? 'panel-top-left' : 'panel-middle-right';
+  const panel = $(panelId);
+  if (panel) {
+    panel.classList.add('hidden');
+  }
 }
 
 async function fetchLiveGameData() {
-  if (!state.channelId) return;
+  if (!state.channelId || state.isFetching) return;
+  state.isFetching = true;
 
   try {
     const url = `${WORKER_URL}/data/${encodeURIComponent(state.channelId)}/guild-run/data`;
@@ -77,7 +103,11 @@ async function fetchLiveGameData() {
     }
 
     const payloadText = await res.text();
-    if (payloadText === state.lastPayloadStr) return; // Skip DOM re-render if unchanged
+    // Only re-render if payload content changed
+    if (payloadText === state.lastPayloadStr) {
+      state.isFetching = false;
+      return;
+    }
     state.lastPayloadStr = payloadText;
 
     let data;
@@ -96,21 +126,23 @@ async function fetchLiveGameData() {
 
     renderActiveRunState(data);
   } catch (err) {
-    console.warn('[TwitchExt] Polling error:', err);
+    console.warn('[GuildRunExt] Data fetch error:', err);
     renderOfflineState();
+  } finally {
+    state.isFetching = false;
   }
 }
 
 function renderNoRunState(subMsg = 'No active run') {
-  const dot = $('pill-status-dot');
-  if (dot) {
-    dot.className = 'pill-dot offline';
-  }
-  $('pill-title-text').textContent = 'Guild Run';
-  $('pill-sub-text').textContent = subMsg;
+  // Update Relics badge count
+  if ($('relics-count-badge')) $('relics-count-badge').textContent = '0';
+  if ($('relics-header-count')) $('relics-header-count').textContent = '0 Relics';
 
-  $('active-run-view').hidden = true;
-  $('no-run-view').hidden = false;
+  // Toggle views
+  if ($('active-challenge-view')) $('active-challenge-view').hidden = true;
+  if ($('no-challenge-view')) $('no-challenge-view').hidden = false;
+  if ($('relics-list')) $('relics-list').innerHTML = '';
+  if ($('relics-empty-view')) $('relics-empty-view').hidden = false;
 }
 
 function renderOfflineState() {
@@ -118,58 +150,96 @@ function renderOfflineState() {
 }
 
 function renderActiveRunState(data) {
-  // Update Pill Badge
-  const dot = $('pill-status-dot');
-  if (dot) {
-    dot.className = 'pill-dot'; // active green dot
-  }
-
   const act = data.RunSessionDto?.Act || data.Act || 1;
   const floor = data.RunSessionDto?.Floor || data.Floor || 1;
-  const shards = data.PlayerDataDto?.Shards || data.Shards || 0;
-  const seed = data.RunSessionDto?.Seed || data.Seed || '—';
+  const deaths = calculateHeroDeaths(data);
 
-  $('pill-title-text').textContent = `Act ${act} · Floor ${floor}`;
-  $('pill-sub-text').textContent = `💎 ${shards} Shards`;
+  // Show active challenge view, hide empty state
+  if ($('active-challenge-view')) $('active-challenge-view').hidden = false;
+  if ($('no-challenge-view')) $('no-challenge-view').hidden = true;
 
-  // Show active view, hide no-run view
-  $('active-run-view').hidden = false;
-  $('no-run-view').hidden = true;
+  // Update Challenge Stats Box
+  if ($('val-act')) $('val-act').textContent = act;
+  if ($('val-floor')) $('val-floor').textContent = floor;
+  if ($('val-deaths')) $('val-deaths').textContent = deaths;
 
-  // Update Stats Box
-  $('val-act').textContent = act;
-  $('val-floor').textContent = floor;
-  $('val-gold').textContent = shards;
-  $('val-seed').textContent = seed;
-
-  // Render Relics
+  // Render Relics (Top-Left Zone)
   const relicsMap = data.PlayerDataDto?.ActiveRelics || data.ActiveRelics || {};
   renderRelics(relicsMap);
+}
 
-  // Render Heroes / Party
-  const heroesMap = data.GameRegistryDto?.Heroes || data.Heroes || {};
-  renderHeroes(heroesMap);
+function calculateHeroDeaths(data) {
+  if (typeof window.calculateHeroDeathsCustom === 'function') {
+    return window.calculateHeroDeathsCustom(data);
+  }
+  const challenges = data.ChallengeDto?.Challenges || data.Challenges;
+  if (Array.isArray(challenges)) {
+    const deathChallenge = challenges.find(c => c && Number(c.Type ?? c.type) === 4);
+    if (deathChallenge && deathChallenge.Progress !== undefined) {
+      return deathChallenge.Progress;
+    }
+  }
+  return 0;
 }
 
 function renderRelics(relicsMap) {
   const container = $('relics-list');
+  const emptyView = $('relics-empty-view');
   if (!container) return;
 
   const entries = Object.entries(relicsMap);
-  $('relics-count').textContent = entries.length;
+  const count = entries.length;
 
-  if (entries.length === 0) {
-    container.innerHTML = `<div style="grid-column: 1/-1; color: var(--text-dim); font-size: 0.78rem;">No relics acquired yet</div>`;
+  if ($('relics-count-badge')) $('relics-count-badge').textContent = count;
+  if ($('relics-header-count')) $('relics-header-count').textContent = `${count} Relic${count === 1 ? '' : 's'}`;
+
+  if (count === 0) {
+    container.innerHTML = '';
+    if (emptyView) emptyView.hidden = false;
     return;
   }
 
-  container.innerHTML = entries.map(([id, relic]) => {
-    const seqId = relic.RelicSequentialId || id;
-    const name = formatRelicName(seqId);
+  if (emptyView) emptyView.hidden = true;
+
+  container.innerHTML = entries.map(([idKey, relic]) => {
+    // Resolve candidates: e.g. "Relic_900", "900", "Relic_GoldenShield"
+    const rawVal = (typeof relic === 'object' && relic !== null)
+      ? (relic.RelicSequentialId ?? relic.RelicId ?? relic.Id ?? relic.id ?? idKey)
+      : (relic ?? idKey);
+    
+    const strVal = String(rawVal).trim();
+    const numId = strVal.replace(/^Relic_/i, '');
+    
+    const candidates = [
+      `Relic_${numId}`,
+      numId,
+      strVal,
+      `Relic_${strVal}`
+    ];
+
+    let dbEntry = null;
+    if (state.database.relics) {
+      for (const key of candidates) {
+        if (state.database.relics[key]) {
+          dbEntry = state.database.relics[key];
+          break;
+        }
+      }
+    }
+    dbEntry = dbEntry || {};
+
+    const name = dbEntry.name || formatRelicName(numId);
+    const description = dbEntry.description || 'Active Guild Run Relic';
+    const rarity = (dbEntry.rarity || 'common').toLowerCase();
     return `
-      <div class="relic-card" title="${escapeHtml(name)}">
-        <div class="relic-icon">🛡️</div>
-        <div class="relic-name">${escapeHtml(name)}</div>
+      <div class="relic-card rarity-${rarity}" title="${escapeHtml(name)} — ${escapeHtml(description)}">
+        <div class="relic-info">
+          <div class="relic-header-line">
+            <span class="relic-name">${escapeHtml(name)}</span>
+            ${dbEntry.rarity ? `<span class="relic-rarity-badge rarity-${rarity}">${escapeHtml(dbEntry.rarity)}</span>` : ''}
+          </div>
+          <div class="relic-desc">${escapeHtml(description)}</div>
+        </div>
       </div>
     `;
   }).join('');
@@ -180,15 +250,17 @@ function renderHeroes(heroesMap) {
   if (!container) return;
 
   const heroList = Array.isArray(heroesMap) ? heroesMap : Object.values(heroesMap);
-  $('party-count').textContent = heroList.length;
+  if ($('party-count')) $('party-count').textContent = heroList.length;
 
   if (heroList.length === 0) {
-    container.innerHTML = `<div style="color: var(--text-dim); font-size: 0.78rem;">No heroes in party</div>`;
+    container.innerHTML = `<div class="empty-subtext">No heroes currently in party</div>`;
     return;
   }
 
   container.innerHTML = heroList.map(hero => {
-    const name = hero.Name || hero.HeroId || 'Hero';
+    const rawHeroId = hero.HeroId || hero.Id;
+    const dbHero = state.database.heroes?.[rawHeroId] || {};
+    const name = hero.Name || dbHero.name || rawHeroId || 'Hero';
     const hp = hero.CurrentHp !== undefined ? hero.CurrentHp : 100;
     const maxHp = hero.MaxHp || 100;
     const level = hero.Level || 1;
