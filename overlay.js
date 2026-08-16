@@ -150,8 +150,16 @@ function renderOfflineState() {
 }
 
 function renderActiveRunState(data) {
-  const act = data.RunSessionDto?.Act || data.Act || 1;
-  const floor = data.RunSessionDto?.Floor || data.Floor || 1;
+  const session = data.RunSessionDto || {};
+
+  // CurrentAct is 0-indexed in RunSessionDto (0 = Act 1, 1 = Act 2...)
+  const rawAct = session.CurrentAct ?? session.Act ?? data.Act;
+  const act = (typeof rawAct === 'number') ? (rawAct + 1) : (rawAct || 1);
+
+  // CurrentFloor is 0-indexed in RunSessionDto (0 = Floor 1, 1 = Floor 2...)
+  const rawFloor = session.CurrentFloor ?? session.Floor ?? data.Floor;
+  const floor = (typeof rawFloor === 'number') ? (rawFloor + 1) : (rawFloor || 1);
+
   const deaths = calculateHeroDeaths(data);
 
   // Show active challenge view, hide empty state
