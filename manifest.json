@@ -1,0 +1,20 @@
+{
+  "manifest_version": 1,
+  "name": "GuildRunDataDisplayTwitchExtension",
+  "version": "1.0.0",
+  "author_name": "Kalaniehukai",
+  "description": "Live Video Overlay displaying real-time Guild Run save data (Act, Floor, Relics, Heroes, HP, Shards) to Twitch viewers.",
+  "summary": "Live Video Overlay for Guild Run streamer game data",
+  "viewer_summary": "Interactive HUD displaying live stream Guild Run progress, active relics, hero party health, and run stats.",
+  "views": {
+    "video_overlay": {
+      "viewer_url": "overlay.html",
+      "can_user_config": false
+    },
+    "config": {
+      "viewer_url": "config.html"
+    }
+  },
+  "whitelisted_config_urls": [],
+  "whitelisted_panel_urls": []
+}
