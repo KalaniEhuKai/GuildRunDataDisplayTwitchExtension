@@ -166,9 +166,9 @@ function renderActiveRunState(data) {
   const rawAct = session.CurrentAct ?? session.Act ?? data.Act;
   const act = (typeof rawAct === 'number') ? (rawAct + 1) : (rawAct || 1);
 
-  // CurrentFloor is 0-indexed in RunSessionDto (0 = Floor 1, 1 = Floor 2...)
-  const rawFloor = session.CurrentFloor ?? session.Floor ?? data.Floor;
-  const floor = (typeof rawFloor === 'number') ? (rawFloor + 1) : (rawFloor || 1);
+  // CurrentFight/CurrentFloor is 0-indexed in RunSessionDto (0 = Fight 1, 1 = Fight 2...)
+  const rawFight = session.CurrentFight ?? session.CurrentFloor ?? session.Fight ?? session.Floor ?? data.Fight ?? data.Floor;
+  const fight = (typeof rawFight === 'number') ? (rawFight + 1) : (rawFight || 1);
 
   const deaths = calculateHeroDeaths(data);
 
@@ -178,7 +178,8 @@ function renderActiveRunState(data) {
 
   // Update Challenge Stats Box
   if ($('val-act')) $('val-act').textContent = act;
-  if ($('val-floor')) $('val-floor').textContent = floor;
+  if ($('val-fight')) $('val-fight').textContent = fight;
+  if ($('val-floor')) $('val-floor').textContent = fight;
   if ($('val-deaths')) $('val-deaths').textContent = deaths;
 
   // Render Relics (Top-Left Zone)
