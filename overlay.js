@@ -7,9 +7,9 @@
 
 // Configuration: Active backend infrastructure URL ('cloudflare' or 'supabase')
 const BACKEND_CONFIG = {
-  activeBackend: 'cloudflare', // Change to 'supabase' to target Supabase Edge Functions
+  activeBackend: 'supabase', // Change to 'supabase' to target Supabase Edge Functions
   cloudflareUrl: 'https://twitch-local-game-data-bridge.kalani-ehu-kai.workers.dev',
-  supabaseUrl: 'https://YOUR_SUPABASE_PROJECT_REF.supabase.co/functions/v1/bridge',
+  supabaseUrl: 'https://xikiyonkixttbmdagehh.supabase.co/functions/v1/bridge',
   get activeUrl() {
     return this.activeBackend === 'supabase' ? this.supabaseUrl : this.cloudflareUrl;
   }
