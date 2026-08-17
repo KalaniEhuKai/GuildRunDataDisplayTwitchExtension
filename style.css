@@ -61,7 +61,7 @@ body {
 
 /* Zone 2: Upper-Right (Current Challenge Data) */
 .zone-middle-right {
-  top: 200px;
+  top: 110px;
   right: 10px;
   flex-direction: column;
   align-items: flex-end;
@@ -88,7 +88,7 @@ body {
 /* Sizing for Right Zone Box (Matches 0/6 challenge counter icon area in screenshot) */
 .zone-middle-right .zone-box {
   width: 90px;
-  height: 90px;
+  height: 270px;
 }
 
 /* Hover state: highlight border with vibrant glow when user mouses over */
