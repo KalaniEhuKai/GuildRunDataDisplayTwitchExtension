@@ -353,7 +353,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_700": {
       "id": "700",
       "name": "Poison Bauble",
-      "description": "At start of combat, inflict 5 Poison on all enemies.",
+      "description": "At start of combat, inflict 7 Poison on all enemies.",
       "rarity": "unique",
       "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_700-f03d889c81b1.webp"
     },
