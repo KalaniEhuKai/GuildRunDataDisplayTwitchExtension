@@ -3,7 +3,7 @@ window.GUILD_RUN_DATABASE = {
     "title": "Guild Run Database",
     "version": "1.0.0",
     "description": "Metadata definitions for relics, heroes, and challenge items used by the Twitch Video Overlay Extension.",
-    "updated": "2026-08-16",
+    "updated": "2026-08-19",
     "total_relics": 315
   },
   "relics": {
