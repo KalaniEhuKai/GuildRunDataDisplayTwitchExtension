@@ -76,7 +76,17 @@ body {
   border-radius: 12px;                /* Rectangle with curved corners */
   cursor: pointer;
   box-shadow: none;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.4s ease, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  opacity: 1;
+}
+
+/* Auto-hide zone border markers when mouse is idle or on screen edges */
+.overlay-container.zones-hidden .zone-box {
+  opacity: 0;
+}
+
+.overlay-container.zones-hidden .hover-zone:hover .zone-box {
+  opacity: 1;
 }
 
 /* Sizing for Top-Left Zone Box (Matches top-left relic icons area in screenshot) */

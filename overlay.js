@@ -60,6 +60,68 @@ function initOverlay() {
 
   // 3. Attach hover zone event listeners for event-driven fetching
   setupHoverZones();
+
+  // 4. Attach idle mouse & edge detection for zone border auto-hide
+  setupIdleBorderDetection();
+}
+
+let idleBorderTimer = null;
+const IDLE_TIMEOUT_MS = 2500; // Hide zone borders after 2.5 seconds of mouse inactivity
+const EDGE_MARGIN_PX = 10;    // Hide immediately if cursor is within 10px of screen edges
+
+function setupIdleBorderDetection() {
+  const container = $('overlay-container');
+  if (!container) return;
+
+  function showBorders() {
+    container.classList.remove('zones-hidden');
+  }
+
+  function hideBorders() {
+    if (!state.activeHoverZone) {
+      container.classList.add('zones-hidden');
+    }
+  }
+
+  function resetTimer() {
+    showBorders();
+    clearTimeout(idleBorderTimer);
+    idleBorderTimer = setTimeout(() => {
+      hideBorders();
+    }, IDLE_TIMEOUT_MS);
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    // Hide borders immediately if mouse is on or near the edge(s) of the screen
+    const isAtEdge =
+      e.clientX <= EDGE_MARGIN_PX ||
+      e.clientY <= EDGE_MARGIN_PX ||
+      e.clientX >= (window.innerWidth - EDGE_MARGIN_PX) ||
+      e.clientY >= (window.innerHeight - EDGE_MARGIN_PX);
+
+    if (isAtEdge) {
+      clearTimeout(idleBorderTimer);
+      hideBorders();
+      return;
+    }
+
+    // If mouse is inside an active hover zone area, keep borders visible
+    if (state.activeHoverZone) {
+      showBorders();
+      clearTimeout(idleBorderTimer);
+      return;
+    }
+
+    resetTimer();
+  });
+
+  document.addEventListener('mouseleave', () => {
+    clearTimeout(idleBorderTimer);
+    hideBorders();
+  });
+
+  // Initial timer start on load
+  resetTimer();
 }
 
 function setupHoverZones() {
@@ -79,6 +141,12 @@ function setupHoverZones() {
 
 async function onZoneMouseEnter(zoneId) {
   state.activeHoverZone = zoneId;
+
+  const container = $('overlay-container');
+  if (container) {
+    container.classList.remove('zones-hidden');
+  }
+  clearTimeout(idleBorderTimer);
 
   // Show corresponding popover panel
   const panelId = zoneId === 'top-left' ? 'panel-top-left' : 'panel-middle-right';
@@ -101,6 +169,17 @@ function onZoneMouseLeave(zoneId) {
   const panel = $(panelId);
   if (panel) {
     panel.classList.add('hidden');
+  }
+
+  // Restart idle border timer when leaving zone
+  const container = $('overlay-container');
+  if (container) {
+    clearTimeout(idleBorderTimer);
+    idleBorderTimer = setTimeout(() => {
+      if (!state.activeHoverZone) {
+        container.classList.add('zones-hidden');
+      }
+    }, IDLE_TIMEOUT_MS);
   }
 }
 
