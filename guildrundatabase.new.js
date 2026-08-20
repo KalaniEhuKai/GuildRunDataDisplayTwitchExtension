@@ -568,7 +568,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2032": {
         "id": "2032",
         "name": "Poison Conduit",
-        "description": "Quest: Inflict 150 Poison. Rewards: Whenever a Hero inflicts Poison, they gain 150 Magic and 1 Attack per 1 Poison inflicted.",
+        "description": "Quest: Inflict 200 Poison. Rewards: Whenever a Hero inflicts Poison, they gain 200 Magic and 1 Attack per 1 Poison inflicted.",
         "raw_template": "Quest: Inflict {0} Poison. Rewards: Whenever a Hero inflicts Poison, they gain {0} Magic and {1} Attack per {2} Poison inflicted.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2032-350f41344482.webp",
@@ -622,7 +622,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2038": {
         "id": "2038",
         "name": "Burn Conduit",
-        "description": "Quest: Inflict 500 Burn. Rewards: Whenever a Hero inflicts Burn, they gain 500 Magic and 1 Attack per 1 Burn inflicted.",
+        "description": "Quest: Inflict 600 Burn. Rewards: Whenever a Hero inflicts Burn, they gain 600 Magic and 1 Attack per 1 Burn inflicted.",
         "raw_template": "Quest: Inflict {0} Burn. Rewards: Whenever a Hero inflicts Burn, they gain {0} Magic and {1} Attack per {2} Burn inflicted.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2038-819d72626c43.webp",
@@ -685,7 +685,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2045": {
         "id": "2045",
         "name": "Combative Codex",
-        "description": "Heroes gain 1d6 Attack. On combat victory, permanently increase the Attack gained by 6.",
+        "description": "Heroes gain 6 Attack.\n\nOn combat victory, permanently increase the Attack gained by {1}.",
         "raw_template": "Heroes gain {0} Attack.\n\nOn combat victory, permanently increase the Attack gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2045-b9255d95c994.webp",
@@ -694,7 +694,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2046": {
         "id": "2046",
         "name": "Enchanted Codex",
-        "description": "Heroes gain 1d6 Magic. On combat victory, permanently increase the Magic gained by 6.",
+        "description": "Heroes gain 6 Magic.\n\nOn combat victory, permanently increase the Magic gained by {1}.",
         "raw_template": "Heroes gain {0} Magic.\n\nOn combat victory, permanently increase the Magic gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2046-079ef9b56458.webp",
@@ -703,7 +703,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2047": {
         "id": "2047",
         "name": "Vampiric Codex",
-        "description": "Heroes gain 1d2 Omnivamp. On combat victory, permanently increase the Omnivamp gained by 2.",
+        "description": "Heroes gain 2 Omnivamp.\n\nOn combat victory, permanently increase the Omnivamp gained by {1}.",
         "raw_template": "Heroes gain {0} Omnivamp.\n\nOn combat victory, permanently increase the Omnivamp gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2047-c3487aa30ae0.webp",
@@ -712,7 +712,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2048": {
         "id": "2048",
         "name": "Vital Codex",
-        "description": "Heroes gain 1d50 Max HP. On combat victory, permanently increase the Max HP gained by 50.",
+        "description": "Heroes gain 50 Max HP.\n\nOn combat victory, permanently increase the Max HP gained by {1}.",
         "raw_template": "Heroes gain {0} Max HP.\n\nOn combat victory, permanently increase the Max HP gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2048-e2892c86e49b.webp",
@@ -721,7 +721,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2049": {
         "id": "2049",
         "name": "Plated Codex",
-        "description": "Heroes gain 1d10 Defense. On combat victory, permanently increase the Defense gained by 10.",
+        "description": "Heroes gain 10 Defense.\n\nOn combat victory, permanently increase the Defense gained by {1}.",
         "raw_template": "Heroes gain {0} Defense.\n\nOn combat victory, permanently increase the Defense gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2049-abe850f768c5.webp",
@@ -730,7 +730,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2050": {
         "id": "2050",
         "name": "Precise Codex",
-        "description": "Heroes gain 1d4 Crit. On combat victory, permanently increase the Crit gained by 4.",
+        "description": "Heroes gain 4 Crit.\n\nOn combat victory, permanently increase the Crit gained by {1}.",
         "raw_template": "Heroes gain {0} Crit.\n\nOn combat victory, permanently increase the Crit gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2050-971a21ce748f.webp",
@@ -739,7 +739,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2051": {
         "id": "2051",
         "name": "Swift Codex",
-        "description": "Heroes gain 1d5 Attack Speed. On combat victory, permanently increase the Attack Speed gained by 5.",
+        "description": "Heroes gain 5 Attack Speed.\n\nOn combat victory, permanently increase the Attack Speed gained by {1}.",
         "raw_template": "Heroes gain {0} Attack Speed.\n\nOn combat victory, permanently increase the Attack Speed gained by {1}.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2051-c0d5df923abb.webp",
@@ -802,7 +802,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2058": {
         "id": "2058",
         "name": "Violence Conduit",
-        "description": "Quest: Auto attack 150 times. Rewards: Each Hero's first auto attack against each enemy gains 150 Crit.",
+        "description": "Quest: Auto attack 200 times. Rewards: Each Hero's first auto attack against each enemy gains 200 Crit.",
         "raw_template": "Quest: Auto attack {0} times. Rewards: Each Hero's first auto attack against each enemy gains {0} Crit.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2058-fd9ed158e94e.webp",
@@ -811,7 +811,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_2059": {
         "id": "2059",
         "name": "Arcane Conduit",
-        "description": "Quest: Cast 15 Active Abilities. Rewards: Heroes gain 15 Starting Mana.",
+        "description": "Quest: Cast 25 Active Abilities. Rewards: Heroes gain 25 Starting Mana.",
         "raw_template": "Quest: Cast {0} Active Abilities. Rewards: Heroes gain {0} Starting Mana.",
         "rarity": "rare",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_2059-a21bded17d6b.webp",
@@ -1342,7 +1342,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_3058": {
         "id": "3058",
         "name": "Golden Ascendancy",
-        "description": "Quest: Win a combat with 66 or more Shards in your bank. Rewards: Get 4 random Crest items. Crest items make a Hero count as having an additional class.",
+        "description": "Quest: Win a combat with 66 or more Shards in your bank. Rewards: Get 66 random Crest items. Crest items make a Hero count as having an additional class.",
         "raw_template": "Quest: Win a combat with {0} or more Shards in your bank. Rewards: Get {0} random Crest items. Crest items make a Hero count as having an additional class.",
         "rarity": "epic",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_3058-5204a11ae5bd.webp",
@@ -1738,7 +1738,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5000": {
         "id": "5000",
         "name": "Rapid Growth",
-        "description": "For Rush (0), enemies have 1% increased stats.",
+        "description": "For Rush ({0}), enemies have {1}% increased stats.",
         "raw_template": "For Rush ({0}), enemies have {1}% increased stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5000.webp",
@@ -1747,7 +1747,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5001": {
         "id": "5001",
         "name": "Steady Growth",
-        "description": "After Stall (0), enemies have 1% increased stats.",
+        "description": "After Stall ({0}), enemies have {1}% increased stats.",
         "raw_template": "After Stall ({0}), enemies have {1}% increased stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5001.webp",
@@ -1756,7 +1756,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5002": {
         "id": "5002",
         "name": "Pain",
-        "description": "Each second, Heroes take damage equal to 0% of their Max HP.",
+        "description": "Each second, Heroes take damage equal to {0}% of their Max HP.",
         "raw_template": "Each second, Heroes take damage equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5002.webp",
@@ -1765,7 +1765,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5003": {
         "id": "5003",
         "name": "Improvidence",
-        "description": "Each second, enemies heal 0% Max HP.",
+        "description": "Each second, enemies heal {0}% Max HP.",
         "raw_template": "Each second, enemies heal {0}% Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5003.webp",
@@ -1774,7 +1774,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5004": {
         "id": "5004",
         "name": "Decay",
-        "description": "Heroes have 0% decreased basic stats.",
+        "description": "Heroes have {0}% decreased basic stats.",
         "raw_template": "Heroes have {0}% decreased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5004.webp",
@@ -1783,7 +1783,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5005": {
         "id": "5005",
         "name": "Immunity",
-        "description": "For Rush (0), enemies are immune to damage.",
+        "description": "For Rush ({0}), enemies are immune to damage.",
         "raw_template": "For Rush ({0}), enemies are immune to damage.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5005.webp",
@@ -1792,7 +1792,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5011": {
         "id": "5011",
         "name": "Rapid Growth",
-        "description": "For Rush (0), enemies have 1% increased stats.",
+        "description": "For Rush ({0}), enemies have {1}% increased stats.",
         "raw_template": "For Rush ({0}), enemies have {1}% increased stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5011.webp",
@@ -1801,7 +1801,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5012": {
         "id": "5012",
         "name": "Steady Growth",
-        "description": "After Stall (0), enemies have 1% increased stats.",
+        "description": "After Stall ({0}), enemies have {1}% increased stats.",
         "raw_template": "After Stall ({0}), enemies have {1}% increased stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5012.webp",
@@ -1810,7 +1810,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5013": {
         "id": "5013",
         "name": "Pain",
-        "description": "Each second, Heroes take damage equal to 0% of their Max HP.",
+        "description": "Each second, Heroes take damage equal to {0}% of their Max HP.",
         "raw_template": "Each second, Heroes take damage equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5013.webp",
@@ -1819,7 +1819,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5014": {
         "id": "5014",
         "name": "Improvidence",
-        "description": "Each second, enemies heal 0% Max HP.",
+        "description": "Each second, enemies heal {0}% Max HP.",
         "raw_template": "Each second, enemies heal {0}% Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5014.webp",
@@ -1828,7 +1828,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5015": {
         "id": "5015",
         "name": "Decay",
-        "description": "Heroes have 0% decreased basic stats.",
+        "description": "Heroes have {0}% decreased basic stats.",
         "raw_template": "Heroes have {0}% decreased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5015.webp",
@@ -1837,7 +1837,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5016": {
         "id": "5016",
         "name": "Immunity",
-        "description": "For Rush (0), enemies are immune to damage.",
+        "description": "For Rush ({0}), enemies are immune to damage.",
         "raw_template": "For Rush ({0}), enemies are immune to damage.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5016.webp",
@@ -1873,7 +1873,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5100": {
         "id": "5100",
         "name": "Fighting Form",
-        "description": "Heroes have 0% increased basic stats.",
+        "description": "Heroes have {0}% increased basic stats.",
         "raw_template": "Heroes have {0}% increased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5100.webp",
@@ -1882,7 +1882,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5101": {
         "id": "5101",
         "name": "Battle Stance",
-        "description": "Heroes have 0% increased basic stats.",
+        "description": "Heroes have {0}% increased basic stats.",
         "raw_template": "Heroes have {0}% increased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5101.webp",
@@ -1891,7 +1891,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5102": {
         "id": "5102",
         "name": "Weakness",
-        "description": "Heroes have 0% decreased basic stats.",
+        "description": "Heroes have {0}% decreased basic stats.",
         "raw_template": "Heroes have {0}% decreased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5102.webp",
@@ -1900,7 +1900,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5103": {
         "id": "5103",
         "name": "Burning",
-        "description": "At start of combat, inflict Burn on all Heroes equal to 0% of their Max HP.",
+        "description": "At start of combat, inflict Burn on all Heroes equal to {0}% of their Max HP.",
         "raw_template": "At start of combat, inflict Burn on all Heroes equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5103.webp",
@@ -1909,7 +1909,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5104": {
         "id": "5104",
         "name": "Hunted",
-        "description": "Heroes have -0% Defense.",
+        "description": "Heroes have -{0}% Defense.",
         "raw_template": "Heroes have -{0}% Defense.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5104.webp",
@@ -1918,7 +1918,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5105": {
         "id": "5105",
         "name": "Stunned",
-        "description": "At start of combat, Heroes are Stunned for 0 seconds.",
+        "description": "At start of combat, Heroes are Stunned for {0} seconds.",
         "raw_template": "At start of combat, Heroes are Stunned for {0} seconds.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5105.webp",
@@ -1927,7 +1927,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5106": {
         "id": "5106",
         "name": "Rested",
-        "description": "Heroes have 0% increased basic stats.",
+        "description": "Heroes have {0}% increased basic stats.",
         "raw_template": "Heroes have {0}% increased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5106.webp",
@@ -1936,7 +1936,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5107": {
         "id": "5107",
         "name": "Damaged",
-        "description": "At start of combat, Heroes take damage equal to 0% of their Max HP.",
+        "description": "At start of combat, Heroes take damage equal to {0}% of their Max HP.",
         "raw_template": "At start of combat, Heroes take damage equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5107.webp",
@@ -1945,7 +1945,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5108": {
         "id": "5108",
         "name": "Flaming",
-        "description": "At start of combat, inflict Burn on all Heroes equal to 0% of their Max HP.",
+        "description": "At start of combat, inflict Burn on all Heroes equal to {0}% of their Max HP.",
         "raw_template": "At start of combat, inflict Burn on all Heroes equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5108.webp",
@@ -1990,7 +1990,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5112": {
         "id": "5112",
         "name": "Cost of Knowledge",
-        "description": "Heroes have 0% decreased basic stats.",
+        "description": "Heroes have {0}% decreased basic stats.",
         "raw_template": "Heroes have {0}% decreased basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5112.webp",
@@ -1999,7 +1999,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5113": {
         "id": "5113",
         "name": "The Rift Puppy's Cry",
-        "description": "Gain 0 additional Shards for killing the Act Boss.",
+        "description": "Gain {0} additional Shards for killing the Act Boss.",
         "raw_template": "Gain {0} additional Shards for killing the Act Boss.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5113.webp",
@@ -2008,7 +2008,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5114": {
         "id": "5114",
         "name": "The Etched Path",
-        "description": "Get 0 when this expires.",
+        "description": "Get {0} when this expires.",
         "raw_template": "Get {0} when this expires.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5114.webp",
@@ -2017,7 +2017,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5115": {
         "id": "5115",
         "name": "The Rift Puppy",
-        "description": "At start of combat, Heroes take damage equal to 0% of their Max HP.",
+        "description": "At start of combat, Heroes take damage equal to {0}% of their Max HP.",
         "raw_template": "At start of combat, Heroes take damage equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5115.webp",
@@ -2026,7 +2026,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5116": {
         "id": "5116",
         "name": "The Jagged Chasm",
-        "description": "Heroes lose 0% basic stats.\n\nCombats rewards 1 more Shards per victory.",
+        "description": "Heroes lose {0}% basic stats.\n\nCombats rewards {1} more Shards per victory.",
         "raw_template": "Heroes lose {0}% basic stats.\n\nCombats rewards {1} more Shards per victory.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5116.webp",
@@ -2035,7 +2035,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5117": {
         "id": "5117",
         "name": "The Jagged Divide",
-        "description": "Heroes lose 0% basic stats.\n\nGet 1 when this expires.",
+        "description": "Heroes lose {0}% basic stats.\n\nGet {1} when this expires.",
         "raw_template": "Heroes lose {0}% basic stats.\n\nGet {1} when this expires.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5117.webp",
@@ -2044,7 +2044,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5118": {
         "id": "5118",
         "name": "The Fairy Ring",
-        "description": "At start of combat, inflict Poison on all Heroes equal to 0% of their Max HP.\n\nGet 1 when this expires.",
+        "description": "At start of combat, inflict Poison on all Heroes equal to {0}% of their Max HP.\n\nGet {1} when this expires.",
         "raw_template": "At start of combat, inflict Poison on all Heroes equal to {0}% of their Max HP.\n\nGet {1} when this expires.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5118.webp",
@@ -2062,7 +2062,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5120": {
         "id": "5120",
         "name": "The Well of Temptation",
-        "description": "Heroes gain 0% basic stats.",
+        "description": "Heroes gain {0}% basic stats.",
         "raw_template": "Heroes gain {0}% basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5120.webp",
@@ -2071,7 +2071,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5121": {
         "id": "5121",
         "name": "The Debtor",
-        "description": "Earn 0 fewer Shards for combat victory.",
+        "description": "Earn {0} fewer Shards for combat victory.",
         "raw_template": "Earn {0} fewer Shards for combat victory.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5121.webp",
@@ -2080,7 +2080,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5122": {
         "id": "5122",
         "name": "The Debtor",
-        "description": "Earn 0 fewer Shards for combat victory.",
+        "description": "Earn {0} fewer Shards for combat victory.",
         "raw_template": "Earn {0} fewer Shards for combat victory.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5122.webp",
@@ -2089,7 +2089,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5123": {
         "id": "5123",
         "name": "The Cursed Urn",
-        "description": "Earn 0 fewer Shards for combat victory.",
+        "description": "Earn {0} fewer Shards for combat victory.",
         "raw_template": "Earn {0} fewer Shards for combat victory.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5123.webp",
@@ -2098,7 +2098,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5124": {
         "id": "5124",
         "name": "The Nest",
-        "description": "Get 0 when this expires.",
+        "description": "Get {0} when this expires.",
         "raw_template": "Get {0} when this expires.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5124.webp",
@@ -2107,7 +2107,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5125": {
         "id": "5125",
         "name": "The Well of Temptation",
-        "description": "Earn 0 fewer Shards for combat victory.",
+        "description": "Earn {0} fewer Shards for combat victory.",
         "raw_template": "Earn {0} fewer Shards for combat victory.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5125.webp",
@@ -2116,7 +2116,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5126": {
         "id": "5126",
         "name": "The Etched Path",
-        "description": "Get 0 when this expires.",
+        "description": "Get {0} when this expires.",
         "raw_template": "Get {0} when this expires.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5126.webp",
@@ -2125,7 +2125,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5127": {
         "id": "5127",
         "name": "The Rift Puppy",
-        "description": "At start of combat, Heroes take damage equal to 0% of their Max HP.",
+        "description": "At start of combat, Heroes take damage equal to {0}% of their Max HP.",
         "raw_template": "At start of combat, Heroes take damage equal to {0}% of their Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5127.webp",
@@ -2134,7 +2134,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5128": {
         "id": "5128",
         "name": "Strange Yellow Fruit",
-        "description": "At start of combat, Heroes are Stunned for 0 seconds.\n\nHeroes gain 1 Max HP when this expires.",
+        "description": "At start of combat, Heroes are Stunned for {0} seconds.\n\nHeroes gain {1} Max HP when this expires.",
         "raw_template": "At start of combat, Heroes are Stunned for {0} seconds.\n\nHeroes gain {1} Max HP when this expires.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5128.webp",
@@ -2152,7 +2152,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_519": {
         "id": "519",
         "name": "Tank's Readiness Banner",
-        "description": "Tank's Stall abilities trigger 8 seconds faster.",
+        "description": "Tank's Stall abilities trigger 6 seconds faster.",
         "raw_template": "Tank's Stall abilities trigger {0} seconds faster.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_519-8fcaeea13980.webp",
@@ -2161,7 +2161,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_521": {
         "id": "521",
         "name": "Tank's Patience Banner",
-        "description": "After Stall (15), Tanks permanently gain 8 Defense.",
+        "description": "After Stall (15), Tanks permanently gain 5 Defense.",
         "raw_template": "After Stall ({0}), Tanks permanently gain {1} Defense.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_521-ef63bb7b128b.webp",
@@ -2170,7 +2170,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_526": {
         "id": "526",
         "name": "Tank's Poisonplate Banner",
-        "description": "Whenever a Tank is auto attacked, they apply 2 Poison to the attacker.",
+        "description": "Whenever a Tank is auto attacked, they apply 1 Poison to the attacker.",
         "raw_template": "Whenever a Tank is auto attacked, they apply {0} Poison to the attacker.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_526-99cefacb7b68.webp",
@@ -2224,7 +2224,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_541": {
         "id": "541",
         "name": "Vanguard's Flameplate Banner",
-        "description": "Whenever a Vanguard is auto attacked, they inflict 4 Burn on the attacker.",
+        "description": "Whenever a Vanguard is auto attacked, they inflict 3 Burn on the attacker.",
         "raw_template": "Whenever a Vanguard is auto attacked, they inflict {0} Burn on the attacker.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_541-74f4aacdd19c.webp",
@@ -2233,7 +2233,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_542": {
         "id": "542",
         "name": "Vanguard's Flamefists Banner",
-        "description": "Whenever a Vanguard auto attacks, they inflict 4 Burn on their target.",
+        "description": "Whenever a Vanguard auto attacks, they inflict 3 Burn on their target.",
         "raw_template": "Whenever a Vanguard auto attacks, they inflict {0} Burn on their target.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_542-a2ead7646bf3.webp",
@@ -2278,7 +2278,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5501": {
         "id": "5501",
         "name": "Single Combat",
-        "description": "Defeat the Forest Golem in single combat to get 0.\n\nTo swap Heroes, drag a Hero from the Reserves on top of your current one.",
+        "description": "Defeat the Forest Golem in single combat to get {0}.\n\nTo swap Heroes, drag a Hero from the Reserves on top of your current one.",
         "raw_template": "Defeat the Forest Golem in single combat to get {0}.\n\nTo swap Heroes, drag a Hero from the Reserves on top of your current one.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5501.webp",
@@ -2287,7 +2287,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5502": {
         "id": "5502",
         "name": "Single Combat",
-        "description": "Defeat the Forest Golem in single combat to get 0.\n\nTo swap Heroes, drag a Hero from the Reserves on top of your current one.",
+        "description": "Defeat the Forest Golem in single combat to get {0}.\n\nTo swap Heroes, drag a Hero from the Reserves on top of your current one.",
         "raw_template": "Defeat the Forest Golem in single combat to get {0}.\n\nTo swap Heroes, drag a Hero from the Reserves on top of your current one.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5502.webp",
@@ -2296,7 +2296,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5503": {
         "id": "5503",
         "name": "Endurance",
-        "description": "Survive for 0 seconds to gain 1 Shards.\n\nEnemies in this combat are immune to damage.",
+        "description": "Survive for {0} seconds to gain {1} Shards.\n\nEnemies in this combat are immune to damage.",
         "raw_template": "Survive for {0} seconds to gain {1} Shards.\n\nEnemies in this combat are immune to damage.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5503.webp",
@@ -2305,7 +2305,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5504": {
         "id": "5504",
         "name": "Endurance",
-        "description": "Survive for 0 seconds to gain 1 Shards.\n\nEnemies in this combat are immune to damage.",
+        "description": "Survive for {0} seconds to gain {1} Shards.\n\nEnemies in this combat are immune to damage.",
         "raw_template": "Survive for {0} seconds to gain {1} Shards.\n\nEnemies in this combat are immune to damage.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5504.webp",
@@ -2314,7 +2314,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5505": {
         "id": "5505",
         "name": "Endurance",
-        "description": "Survive for 0 seconds to gain 1 Shards.\n\nEnemies in this combat are immune to damage.",
+        "description": "Survive for {0} seconds to gain {1} Shards.\n\nEnemies in this combat are immune to damage.",
         "raw_template": "Survive for {0} seconds to gain {1} Shards.\n\nEnemies in this combat are immune to damage.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5505.webp",
@@ -2323,7 +2323,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5506": {
         "id": "5506",
         "name": "Demolition",
-        "description": "Kill the Turtle in under 0 seconds to gain 1 Shards.",
+        "description": "Kill the Turtle in under {0} seconds to gain {1} Shards.",
         "raw_template": "Kill the Turtle in under {0} seconds to gain {1} Shards.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5506.webp",
@@ -2332,7 +2332,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5507": {
         "id": "5507",
         "name": "Demolition",
-        "description": "Kill the Turtle in under 0 seconds to gain 1 Shards.",
+        "description": "Kill the Turtle in under {0} seconds to gain {1} Shards.",
         "raw_template": "Kill the Turtle in under {0} seconds to gain {1} Shards.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5507.webp",
@@ -2341,7 +2341,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5508": {
         "id": "5508",
         "name": "Demolition",
-        "description": "Kill the Turtle in under 0 seconds to gain 1 Shards.",
+        "description": "Kill the Turtle in under {0} seconds to gain {1} Shards.",
         "raw_template": "Kill the Turtle in under {0} seconds to gain {1} Shards.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5508.webp",
@@ -2350,7 +2350,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5509": {
         "id": "5509",
         "name": "Rematch",
-        "description": "Defeat the boss in 1v1 combat to gain 0.\n\nThe Hero has 1% reduced basic stats.",
+        "description": "Defeat the boss in 1v1 combat to gain {0}.\n\nThe Hero has {1}% reduced basic stats.",
         "raw_template": "Defeat the boss in 1v1 combat to gain {0}.\n\nThe Hero has {1}% reduced basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5509.webp",
@@ -2368,7 +2368,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5510": {
         "id": "5510",
         "name": "Rematch",
-        "description": "Defeat the boss in under 0 seconds to gain 1.",
+        "description": "Defeat the boss in under {0} seconds to gain {1}.",
         "raw_template": "Defeat the boss in under {0} seconds to gain {1}.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5510.webp",
@@ -2377,7 +2377,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_5511": {
         "id": "5511",
         "name": "Rematch",
-        "description": "Defeat the boss to gain 0.\n\nHeroes have 1% reduced basic stats.",
+        "description": "Defeat the boss to gain {0}.\n\nHeroes have {1}% reduced basic stats.",
         "raw_template": "Defeat the boss to gain {0}.\n\nHeroes have {1}% reduced basic stats.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_5511.webp",
@@ -2404,7 +2404,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_566": {
         "id": "566",
         "name": "Duelist's Toxin Banner",
-        "description": "Whenever a Duelist auto attacks, they inflict 2 Poison on their target.",
+        "description": "Whenever a Duelist auto attacks, they inflict 1 Poison on their target.",
         "raw_template": "Whenever a Duelist auto attacks, they inflict {0} Poison on their target.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_566-798098430ad5.webp",
@@ -2431,7 +2431,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_571": {
         "id": "571",
         "name": "Duelist's Outbreak Banner",
-        "description": "Whenever a Duelist auto attacks, they deal 15 bonus damage per type of Debuff on their target.",
+        "description": "Whenever a Duelist auto attacks, they deal 1 bonus damage per type of Debuff on their target.",
         "raw_template": "Whenever a Duelist auto attacks, they deal {0} bonus damage per type of Debuff on their target.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_571-e30981f87031.webp",
@@ -2485,7 +2485,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_595": {
         "id": "595",
         "name": "Mage's Elemental Banner",
-        "description": "Whenever a Mage casts, all enemies in their range take 6 damage per Frost and 3 damage per Burn they have.",
+        "description": "Whenever a Mage casts, all enemies in their range take 4 damage per Frost and 2 damage per Burn they have.",
         "raw_template": "Whenever a Mage casts, all enemies in their range take {0} damage per Frost and {1} damage per Burn they have.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_595-f2574e3f4b85.webp",
@@ -2494,7 +2494,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_596": {
         "id": "596",
         "name": "Mage's Inferno Banner",
-        "description": "Whenever a Mage casts, they inflict Burn on their target equal to 150% of the Mana spent.",
+        "description": "Whenever a Mage casts, they inflict Burn on their target equal to 100% of the Mana spent.",
         "raw_template": "Whenever a Mage casts, they inflict Burn on their target equal to {0}% of the Mana spent.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_596-cdf77158add7.webp",
@@ -2593,7 +2593,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_601": {
         "id": "601",
         "name": "Mage's Enlightenment Banner",
-        "description": "After Stall (15), Mages permanently gain 10 Magic.",
+        "description": "After Stall (15), Mages permanently gain 6 Magic.",
         "raw_template": "After Stall ({0}), Mages permanently gain {1} Magic.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_601-bf8010806ac7.webp",
@@ -2611,7 +2611,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_6011": {
         "id": "6011",
         "name": "DummyRelicDontUse",
-        "description": "Dummy Relic! Use Relic_0.",
+        "description": "Dummy Relic! Use Relic_{0}.",
         "raw_template": "Dummy Relic! Use Relic_{0}.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_6011.webp",
@@ -2998,7 +2998,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_700": {
         "id": "700",
         "name": "Poison Bauble",
-        "description": "At start of combat, inflict 10 Poison on all enemies.",
+        "description": "At start of combat, inflict 7 Poison on all enemies.",
         "raw_template": "At start of combat, inflict {0} Poison on all enemies.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_700-f03d889c81b1.webp",
@@ -3007,7 +3007,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_7000": {
         "id": "7000",
         "name": "Demon's Fury",
-        "description": "Whenever an enemy reaches 0% remaining Max HP, it gains 1 Attack Speed and Shields equal to 2% of its Max HP.",
+        "description": "Whenever an enemy reaches {0}% remaining Max HP, it gains {1} Attack Speed and Shields equal to {2}% of its Max HP.",
         "raw_template": "Whenever an enemy reaches {0}% remaining Max HP, it gains {1} Attack Speed and Shields equal to {2}% of its Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_7000.webp",
@@ -3025,7 +3025,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_7002": {
         "id": "7002",
         "name": "Fire Dragon's Flame",
-        "description": "At start of combat, inflict 0 Burn on all Heroes.\nOn combat victory, permanently increase the amount of Burn this inflicts by 1.",
+        "description": "At start of combat, inflict {0} Burn on all Heroes.\nOn combat victory, permanently increase the amount of Burn this inflicts by {1}.",
         "raw_template": "At start of combat, inflict {0} Burn on all Heroes.\nOn combat victory, permanently increase the amount of Burn this inflicts by {1}.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_7002.webp",
@@ -3034,7 +3034,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_7003": {
         "id": "7003",
         "name": "Frost Dragon's Chill",
-        "description": "At start of combat, inflict 0 Frost on all Heroes.\nOn combat victory, permanently increase the amount of Frost this inflicts by 1.",
+        "description": "At start of combat, inflict {0} Frost on all Heroes.\nOn combat victory, permanently increase the amount of Frost this inflicts by {1}.",
         "raw_template": "At start of combat, inflict {0} Frost on all Heroes.\nOn combat victory, permanently increase the amount of Frost this inflicts by {1}.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_7003.webp",
@@ -3043,7 +3043,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_7004": {
         "id": "7004",
         "name": "Poison Dragon's Venom",
-        "description": "At start of combat, inflict 0 Poison on all Heroes.\nOn combat victory, permanently increase the amount of Poison this inflicts by 1.",
+        "description": "At start of combat, inflict {0} Poison on all Heroes.\nOn combat victory, permanently increase the amount of Poison this inflicts by {1}.",
         "raw_template": "At start of combat, inflict {0} Poison on all Heroes.\nOn combat victory, permanently increase the amount of Poison this inflicts by {1}.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_7004.webp",
@@ -3079,7 +3079,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_704": {
         "id": "704",
         "name": "Burn Bauble",
-        "description": "At start of combat, inflict 20 Burn on all enemies.",
+        "description": "At start of combat, inflict 15 Burn on all enemies.",
         "raw_template": "At start of combat, inflict {0} Burn on all enemies.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_704-0cd07c998ae4.webp",
@@ -3115,7 +3115,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_708": {
         "id": "708",
         "name": "Shield Fluctuator",
-        "description": "Heroes gain 20 Crit and 5 Mana Regen while Shielded.",
+        "description": "Heroes gain 15 Crit and 4 Mana Regen while Shielded.",
         "raw_template": "Heroes gain {0} Crit and {1} Mana Regen while Shielded.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_708-df58ce6a9a13.webp",
@@ -3151,7 +3151,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_712": {
         "id": "712",
         "name": "Acceleration Resonator",
-        "description": "On Rush trigger, Heroes gain 200 Shields.",
+        "description": "On Rush trigger, Heroes gain 250 Shields.",
         "raw_template": "On Rush trigger, Heroes gain {0} Shields.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_712-e31b23d6ccd5.webp",
@@ -3160,7 +3160,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_713": {
         "id": "713",
         "name": "Acceleration Accumulator",
-        "description": "Quest: Trigger Rush 2 times. Rewards: Rush abilities last 2 second longer.",
+        "description": "Quest: Trigger Rush 3 times. Rewards: Rush abilities last 3 second longer.",
         "raw_template": "Quest: Trigger Rush {0} times. Rewards: Rush abilities last {0} second longer.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_713-073d3d85e3fe.webp",
@@ -3187,7 +3187,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_716": {
         "id": "716",
         "name": "Deceleration Accumulator",
-        "description": "Quest: Trigger Stall 2 times. Rewards: Stall abilities trigger 2 seconds faster.",
+        "description": "Quest: Trigger Stall 3 times. Rewards: Stall abilities trigger 3 seconds faster.",
         "raw_template": "Quest: Trigger Stall {0} times. Rewards: Stall abilities trigger {0} seconds faster.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_716-2c079c0ab4db.webp",
@@ -3205,7 +3205,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_718": {
         "id": "718",
         "name": "Shard Resonator",
-        "description": "On Shards generated, Heroes gain 400 Shields.",
+        "description": "On Shards generated, Heroes gain 1000 Shields.",
         "raw_template": "On Shards generated, Heroes gain {0} Shields.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_718-1fa8c7d3930c.webp",
@@ -3223,7 +3223,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_720": {
         "id": "720",
         "name": "Starter Kit: Instant Shards",
-        "description": "Gain 0 Shards.",
+        "description": "Gain {0} Shards.",
         "raw_template": "Gain {0} Shards.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_720.webp",
@@ -3232,7 +3232,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_723": {
         "id": "723",
         "name": "Starter Kit: Temporary Shard Boost",
-        "description": "For Combat #0 and Combat #1, earn 2 extra Shards per surviving Hero at end of combat.",
+        "description": "For Combat #{0} and Combat #{1}, earn {2} extra Shards per surviving Hero at end of combat.",
         "raw_template": "For Combat #{0} and Combat #{1}, earn {2} extra Shards per surviving Hero at end of combat.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_723.webp",
@@ -3313,7 +3313,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_734": {
         "id": "734",
         "name": "Starter Kit: Temporary Item Discount",
-        "description": "Until Combat #0, items cost 1 less.",
+        "description": "Until Combat #{0}, items cost {1} less.",
         "raw_template": "Until Combat #{0}, items cost {1} less.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_734.webp",
@@ -3322,7 +3322,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_736": {
         "id": "736",
         "name": "Starter Kit: Instant Attack Boost",
-        "description": "A Hero permanently gained 0 Attack.",
+        "description": "A Hero permanently gained {0} Attack.",
         "raw_template": "A Hero permanently gained {0} Attack.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_736.webp",
@@ -3331,7 +3331,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_737": {
         "id": "737",
         "name": "Starter Kit: Instant Max HP Boost",
-        "description": "A Hero permanently gained 0 Max HP.",
+        "description": "A Hero permanently gained {0} Max HP.",
         "raw_template": "A Hero permanently gained {0} Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_737.webp",
@@ -3340,7 +3340,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_738": {
         "id": "738",
         "name": "Starter Kit: Instant Defense Boost",
-        "description": "A Hero permanently gained 0 Defense.",
+        "description": "A Hero permanently gained {0} Defense.",
         "raw_template": "A Hero permanently gained {0} Defense.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_738.webp",
@@ -3349,7 +3349,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_739": {
         "id": "739",
         "name": "Starter Kit: Instant Crit Boost",
-        "description": "A Hero permanently gained 0 Crit.",
+        "description": "A Hero permanently gained {0} Crit.",
         "raw_template": "A Hero permanently gained {0} Crit.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_739.webp",
@@ -3358,7 +3358,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_740": {
         "id": "740",
         "name": "Starter Kit: Instant Attack Speed Boost",
-        "description": "A Hero permanently gained 0 Attack Speed.",
+        "description": "A Hero permanently gained {0} Attack Speed.",
         "raw_template": "A Hero permanently gained {0} Attack Speed.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_740.webp",
@@ -3367,7 +3367,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_741": {
         "id": "741",
         "name": "Starter Kit: Instant Mana Regen Boost",
-        "description": "A Hero permanently gained 0 Mana Regen.",
+        "description": "A Hero permanently gained {0} Mana Regen.",
         "raw_template": "A Hero permanently gained {0} Mana Regen.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_741.webp",
@@ -3376,7 +3376,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_742": {
         "id": "742",
         "name": "Starter Kit: Instant Magic Boost",
-        "description": "A Hero permanently gained 0 Magic.",
+        "description": "A Hero permanently gained {0} Magic.",
         "raw_template": "A Hero permanently gained {0} Magic.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_742.webp",
@@ -3385,7 +3385,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_757": {
         "id": "757",
         "name": "Starter Kit: Temporary Attack Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Attack.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Attack.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Attack.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_757.webp",
@@ -3394,7 +3394,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_758": {
         "id": "758",
         "name": "Starter Kit: Temporary Max HP Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Max HP.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Max HP.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Max HP.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_758.webp",
@@ -3403,7 +3403,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_759": {
         "id": "759",
         "name": "Starter Kit: Temporary Defense Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Defense.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Defense.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Defense.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_759.webp",
@@ -3412,7 +3412,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_760": {
         "id": "760",
         "name": "Starter Kit: Temporary Crit Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Crit.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Crit.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Crit.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_760.webp",
@@ -3421,7 +3421,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_761": {
         "id": "761",
         "name": "Starter Kit: Temporary Attack Speed Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Attack Speed.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Attack Speed.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Attack Speed.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_761.webp",
@@ -3430,7 +3430,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_762": {
         "id": "762",
         "name": "Starter Kit: Temporary Mana Regen Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Mana Regen.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Mana Regen.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Mana Regen.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_762.webp",
@@ -3439,7 +3439,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_763": {
         "id": "763",
         "name": "Starter Kit: Temporary Magic Growth",
-        "description": "At the start of Combat #0 and Combat #1, Heroes permanently gain 2 Magic.",
+        "description": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Magic.",
         "raw_template": "At the start of Combat #{0} and Combat #{1}, Heroes permanently gain {2} Magic.",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_763.webp",
@@ -3457,7 +3457,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_771": {
         "id": "771",
         "name": "Starter Kit: Sustained Item Expansion",
-        "description": "Until the Act Boss, Heroes can equip an additional item (Max: 0).",
+        "description": "Until the Act Boss, Heroes can equip an additional item (Max: {0}).",
         "raw_template": "Until the Act Boss, Heroes can equip an additional item (Max: {0}).",
         "rarity": "common",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_771.webp",
@@ -3520,7 +3520,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_783": {
         "id": "783",
         "name": "Strange Blue Fruit: Attack Drained",
-        "description": "Heroes lose 12 Attack.",
+        "description": "Heroes lose {1} Attack.",
         "raw_template": "Heroes lose {1} Attack.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_783-321d71b797b3.webp",
@@ -3529,7 +3529,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_784": {
         "id": "784",
         "name": "Strange Blue Fruit: Max HP Drained",
-        "description": "Heroes lose 100 Max HP.",
+        "description": "Heroes lose {1} Max HP.",
         "raw_template": "Heroes lose {1} Max HP.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_784-321d71b797b3.webp",
@@ -3538,7 +3538,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_785": {
         "id": "785",
         "name": "Strange Blue Fruit: Defense Drained",
-        "description": "Heroes lose 15 Defense.",
+        "description": "Heroes lose {1} Defense.",
         "raw_template": "Heroes lose {1} Defense.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_785-321d71b797b3.webp",
@@ -3547,7 +3547,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_786": {
         "id": "786",
         "name": "Strange Blue Fruit: Crit Drained",
-        "description": "Heroes lose 7 Crit.",
+        "description": "Heroes lose {1} Crit.",
         "raw_template": "Heroes lose {1} Crit.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_786-321d71b797b3.webp",
@@ -3556,7 +3556,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_787": {
         "id": "787",
         "name": "Strange Blue Fruit: Attack Speed Drained",
-        "description": "Heroes lose 10 Attack Speed.",
+        "description": "Heroes lose {1} Attack Speed.",
         "raw_template": "Heroes lose {1} Attack Speed.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_787-321d71b797b3.webp",
@@ -3565,7 +3565,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_788": {
         "id": "788",
         "name": "Strange Blue Fruit: Mana Regen Drained",
-        "description": "Heroes lose 2 Mana Regen.",
+        "description": "Heroes lose {1} Mana Regen.",
         "raw_template": "Heroes lose {1} Mana Regen.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_788-321d71b797b3.webp",
@@ -3574,7 +3574,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_789": {
         "id": "789",
         "name": "Strange Blue Fruit: Magic Drained",
-        "description": "Heroes lose 12 Magic",
+        "description": "Heroes lose {1} Magic",
         "raw_template": "Heroes lose {1} Magic",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_789-321d71b797b3.webp",
@@ -3583,7 +3583,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_790": {
         "id": "790",
         "name": "Strange Red Fruit: Attack Boost",
-        "description": "Heroes gain 25 Attack.",
+        "description": "Heroes gain {1} Attack.",
         "raw_template": "Heroes gain {1} Attack.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_790-cc4fe5d9ab0c.webp",
@@ -3592,7 +3592,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_791": {
         "id": "791",
         "name": "Strange Red Fruit: Max HP Boost",
-        "description": "Heroes gain 200 Max HP.",
+        "description": "Heroes gain {1} Max HP.",
         "raw_template": "Heroes gain {1} Max HP.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_791-cc4fe5d9ab0c.webp",
@@ -3601,7 +3601,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_792": {
         "id": "792",
         "name": "Strange Red Fruit: Defense Boost",
-        "description": "Heroes gain 30 Defense.",
+        "description": "Heroes gain {1} Defense.",
         "raw_template": "Heroes gain {1} Defense.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_792-cc4fe5d9ab0c.webp",
@@ -3610,7 +3610,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_793": {
         "id": "793",
         "name": "Strange Red Fruit: Crit Boost",
-        "description": "Heroes gain 15 Crit.",
+        "description": "Heroes gain {1} Crit.",
         "raw_template": "Heroes gain {1} Crit.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_793-cc4fe5d9ab0c.webp",
@@ -3619,7 +3619,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_794": {
         "id": "794",
         "name": "Strange Red Fruit: Attack Speed Boost",
-        "description": "Heroes gain 20 Attack Speed.",
+        "description": "Heroes gain {1} Attack Speed.",
         "raw_template": "Heroes gain {1} Attack Speed.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_794-cc4fe5d9ab0c.webp",
@@ -3628,7 +3628,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_795": {
         "id": "795",
         "name": "Strange Red Fruit: Mana Regen Boost",
-        "description": "Heroes gain 4 Mana Regen.",
+        "description": "Heroes gain {1} Mana Regen.",
         "raw_template": "Heroes gain {1} Mana Regen.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_795-cc4fe5d9ab0c.webp",
@@ -3637,7 +3637,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_796": {
         "id": "796",
         "name": "Strange Red Fruit: Magic Boost",
-        "description": "Heroes gain 25 Magic.",
+        "description": "Heroes gain {1} Magic.",
         "raw_template": "Heroes gain {1} Magic.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_796-cc4fe5d9ab0c.webp",
@@ -3673,7 +3673,7 @@ window.GUILD_RUN_DATABASE = {
     "Relic_900": {
         "id": "900",
         "name": "The Red Rift",
-        "description": "Enemies gain 5% basic stats.\n\nThe Act 1 Boss resists Frost, reducing its effects by 50%.",
+        "description": "Enemies gain 5% basic stats.\n\nThe Act {1} Boss resists Frost, reducing its effects by {2}%.",
         "raw_template": "Enemies gain {0}% basic stats.\n\nThe Act {1} Boss resists Frost, reducing its effects by {2}%.",
         "rarity": "unique",
         "icon": "https://pub-5518a73f4c5c4c6dbd8ea6053016bf1c.r2.dev/guildrun/database/relics/Relic_900-1deab3781974.webp",
